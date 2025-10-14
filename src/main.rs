@@ -7,8 +7,7 @@ use gpui_component::{
     v_flex,
 };
 use hello_gp as story;
-use hello_gp::{AccordionStory, AlertStory, Assets, AvatarStory, BadgeStory, ButtonStory, CalendarStory, ChartStory, CheckboxStory, ClipboardStory, ColorPickerStory, DatePickerStory, DescriptionListStory, DrawerStory, DropdownStory, FormStory, GroupBoxStory, IconStory, ImageStory, IndicatorStory, InputStory, KbdStory, LabelStory, ListStory, MenuStory, ModalStory, NotificationStory, NumberInputStory, OtpInputStory, PopoverStory, ProgressStory, RadioStory, ResizableStory, ScrollableStory, SidebarStory, SkeletonStory, SliderStory, SwitchStory, TableStory, TabsStory, TagStory, TextareaStory, TooltipStory, VirtualListStory, WelcomeStory};
-use story::StoryContainer;
+use story::*;
 
 pub struct Gallery {
     stories: Vec<(&'static str, Vec<Entity<StoryContainer>>)>,
@@ -300,7 +299,7 @@ fn main() {
         cx.activate(true);
 
         story::create_new_window(
-            "Gallery of GPUI Component",
+            "GPUI Component",
             move |window, cx| Gallery::view(name.as_deref(), window, cx),
             cx,
         );

@@ -1,11 +1,12 @@
 use std::collections::HashMap;
 
 use gpui::{
-    div, prelude::FluentBuilder, relative, Action, App, AppContext, ClickEvent, Context, Entity,
-    Focusable, IntoElement, ParentElement, Render, SharedString, Styled, Window,
+    Action, App, AppContext, ClickEvent, Context, Entity, Focusable, IntoElement, ParentElement,
+    Render, SharedString, Styled, Window, div, prelude::FluentBuilder, relative,
 };
 
 use gpui_component::{
+    ActiveTheme, Icon, IconName, Side, Sizable,
     badge::Badge,
     breadcrumb::{Breadcrumb, BreadcrumbItem},
     divider::Divider,
@@ -16,7 +17,7 @@ use gpui_component::{
         SidebarToggleButton,
     },
     switch::Switch,
-    v_flex, ActiveTheme, Icon, IconName, Side, Sizable,
+    v_flex,
 };
 use serde::Deserialize;
 

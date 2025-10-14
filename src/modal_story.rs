@@ -367,7 +367,7 @@ impl Render for ModalStory {
                                                 "markdown1",
                                                 include_str!("../README.md"),
                                                 window,
-                                                cx
+                                                cx,
                                             ))
                                     });
                                 })),

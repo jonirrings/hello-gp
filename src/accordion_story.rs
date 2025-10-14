@@ -1,14 +1,15 @@
 use gpui::{
-    prelude::FluentBuilder as _, App, AppContext, Context, Entity, FocusHandle, Focusable,
-    IntoElement, ParentElement as _, Render, Styled as _, Window,
+    App, AppContext, Context, Entity, FocusHandle, Focusable, IntoElement, ParentElement as _,
+    Render, Styled as _, Window, prelude::FluentBuilder as _,
 };
 use gpui_component::{
+    IconName, Selectable, Sizable, Size,
     accordion::Accordion,
     button::{Button, ButtonGroup},
     checkbox::Checkbox,
     h_flex,
     switch::Switch,
-    v_flex, IconName, Selectable, Sizable, Size,
+    v_flex,
 };
 
 use crate::section;
@@ -172,23 +173,23 @@ impl Render for AccordionStory {
                         })
                         .item(|this| {
                             this.open(self.open_ixs.contains(&1))
-                            .when(self.show_icon, |this| this.icon(IconName::Inbox))
-                            .title("Is it styled with complex elements?")
-                            .content(
-                                v_flex()
-                                    .gap_4()
-                                    .child(
-                                        "We can put any view here, like a v_flex with a text view",
-                                    )
-                                    .child(
-                                        h_flex()
-                                            .gap_4()
-                                            .child(Switch::new("switch1").label("Switch"))
-                                            .child(
-                                                Checkbox::new("checkbox1").label("Or a Checkbox"),
-                                            ),
-                                    ),
-                            )
+                                .when(self.show_icon, |this| this.icon(IconName::Inbox))
+                                .title("Is it styled with complex elements?")
+                                .content(
+                                    v_flex()
+                                        .gap_4()
+                                        .child(
+                                            "We can put any view here, like a v_flex with a text view",
+                                        )
+                                        .child(
+                                            h_flex()
+                                                .gap_4()
+                                                .child(Switch::new("switch1").label("Switch"))
+                                                .child(
+                                                    Checkbox::new("checkbox1").label("Or a Checkbox"),
+                                                ),
+                                        ),
+                                )
                         })
                         .item(|this| {
                             this.open(self.open_ixs.contains(&2))

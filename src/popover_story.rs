@@ -1,15 +1,16 @@
 use gpui::{
-    actions, div, px, Action, App, AppContext, Context, Corner, DismissEvent, Element, Entity,
-    EventEmitter, FocusHandle, Focusable, InteractiveElement, IntoElement, KeyBinding, MouseButton,
-    ParentElement as _, Render, Styled as _, Window,
+    Action, App, AppContext, Context, Corner, DismissEvent, Element, Entity, EventEmitter,
+    FocusHandle, Focusable, InteractiveElement, IntoElement, KeyBinding, MouseButton,
+    ParentElement as _, Render, Styled as _, Window, actions, div, px,
 };
 use gpui_component::{
+    ContextModal, Sizable,
     button::{Button, ButtonVariants as _},
     divider::Divider,
     h_flex,
     input::{InputState, TextInput},
     popover::{Popover, PopoverContent},
-    v_flex, ContextModal, Sizable,
+    v_flex,
 };
 use serde::Deserialize;
 

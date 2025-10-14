@@ -1,7 +1,7 @@
 use gpui::{
     App, AppContext, Context, Entity, Focusable, IntoElement, ParentElement, Render, Styled, Window,
 };
-use gpui_component::{button::Button, h_flex, progress::Progress, v_flex, IconName, Sizable};
+use gpui_component::{IconName, Sizable, button::Button, h_flex, progress::Progress, v_flex};
 
 use crate::section;
 

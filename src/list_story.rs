@@ -2,18 +2,19 @@ use std::{rc::Rc, time::Duration};
 
 use fake::Fake;
 use gpui::{
-    actions, div, prelude::FluentBuilder as _, px, App, AppContext, Context, Edges, ElementId,
-    Entity, FocusHandle, Focusable, InteractiveElement, IntoElement, ParentElement, Render,
-    RenderOnce, ScrollStrategy, SharedString, Styled, Subscription, Task, Timer, Window,
+    App, AppContext, Context, Edges, ElementId, Entity, FocusHandle, Focusable, InteractiveElement,
+    IntoElement, ParentElement, Render, RenderOnce, ScrollStrategy, SharedString, Styled,
+    Subscription, Task, Timer, Window, actions, div, prelude::FluentBuilder as _, px,
 };
 
 use gpui_component::{
+    ActiveTheme, Icon, IconName, IndexPath, Selectable, Sizable,
     button::Button,
     checkbox::Checkbox,
     h_flex,
     label::Label,
     list::{List, ListDelegate, ListEvent, ListItem},
-    v_flex, ActiveTheme, Icon, IconName, IndexPath, Selectable, Sizable,
+    v_flex,
 };
 
 actions!(list_story, [SelectedCompany]);

@@ -1,13 +1,14 @@
 use gpui::{
-    div, linear_color_stop, linear_gradient, prelude::FluentBuilder, px, App, AppContext, Context,
-    Entity, FocusHandle, Focusable, Hsla, IntoElement, ParentElement, Render, SharedString, Styled,
-    Window,
+    App, AppContext, Context, Entity, FocusHandle, Focusable, Hsla, IntoElement, ParentElement,
+    Render, SharedString, Styled, Window, div, linear_color_stop, linear_gradient,
+    prelude::FluentBuilder, px,
 };
 use gpui_component::{
+    ActiveTheme, StyledExt,
     chart::{AreaChart, BarChart, LineChart, PieChart},
     divider::Divider,
     dock::PanelControl,
-    h_flex, v_flex, ActiveTheme, StyledExt,
+    h_flex, v_flex,
 };
 use serde::Deserialize;
 
@@ -68,12 +69,12 @@ impl super::Story for ChartStory {
         "Beautiful Charts & Graphs."
     }
 
-    fn new_view(window: &mut Window, cx: &mut App) -> Entity<impl Render> {
-        Self::view(window, cx)
-    }
-
     fn zoomable() -> Option<PanelControl> {
         None
+    }
+
+    fn new_view(window: &mut Window, cx: &mut App) -> Entity<impl Render> {
+        Self::view(window, cx)
     }
 }
 
@@ -247,6 +248,15 @@ impl Render for ChartStory {
                         cx,
                     ))
                     .child(chart_container(
+                        "Line Chart - Step After",
+                        LineChart::new(self.monthly_devices.clone())
+                            .x(|d| d.month.clone())
+                            .y(|d| d.desktop)
+                            .step_after(),
+                        false,
+                        cx,
+                    ))
+                    .child(chart_container(
                         "Line Chart - Dots",
                         LineChart::new(self.monthly_devices.clone())
                             .x(|d| d.month.clone())
@@ -275,6 +285,15 @@ impl Render for ChartStory {
                             .x(|d| d.month.clone())
                             .y(|d| d.desktop)
                             .linear(),
+                        false,
+                        cx,
+                    ))
+                    .child(chart_container(
+                        "Area Chart - Step After",
+                        AreaChart::new(self.monthly_devices.clone())
+                            .x(|d| d.month.clone())
+                            .y(|d| d.desktop)
+                            .step_after(),
                         false,
                         cx,
                     ))

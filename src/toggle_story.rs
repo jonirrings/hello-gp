@@ -4,8 +4,9 @@ use gpui::{
 };
 
 use gpui_component::{
+    IconName, Sizable,
     button::{Toggle, ToggleGroup, ToggleVariants},
-    h_flex, v_flex, IconName, Sizable,
+    h_flex, v_flex,
 };
 
 pub struct ToggleStory {

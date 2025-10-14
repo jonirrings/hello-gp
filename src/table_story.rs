@@ -6,11 +6,12 @@ use std::{
 
 use fake::Fake;
 use gpui::{
-    div, prelude::FluentBuilder as _, Action, AnyElement, App, AppContext, ClickEvent, Context,
-    Entity, Focusable, InteractiveElement, IntoElement, ParentElement, Render, SharedString,
-    StatefulInteractiveElement, Styled, TextAlign, Timer, Window,
+    Action, AnyElement, App, AppContext, ClickEvent, Context, Entity, Focusable,
+    InteractiveElement, IntoElement, ParentElement, Render, SharedString,
+    StatefulInteractiveElement, Styled, TextAlign, Timer, Window, div, prelude::FluentBuilder as _,
 };
 use gpui_component::{
+    ActiveTheme as _, Selectable, Sizable as _, Size, StyleSized as _, StyledExt,
     button::Button,
     checkbox::Checkbox,
     h_flex,
@@ -19,7 +20,7 @@ use gpui_component::{
     label::Label,
     popup_menu::{PopupMenu, PopupMenuExt},
     table::{Column, ColumnFixed, ColumnSort, Table, TableDelegate, TableEvent},
-    v_flex, ActiveTheme as _, Selectable, Sizable as _, Size, StyleSized as _, StyledExt,
+    v_flex,
 };
 use serde::{Deserialize, Serialize};
 

@@ -1,8 +1,9 @@
 use gpui::{
-    div, prelude::FluentBuilder as _, px, App, AppContext, Axis, Context, Entity, FocusHandle,
-    Focusable, InteractiveElement, IntoElement, ParentElement as _, Render, Styled, Window,
+    App, AppContext, Axis, Context, Entity, FocusHandle, Focusable, InteractiveElement,
+    IntoElement, ParentElement as _, Render, Styled, Window, div, prelude::FluentBuilder as _, px,
 };
 use gpui_component::{
+    ActiveTheme, AxisExt, IndexPath, Selectable, Sizable, Size,
     button::{Button, ButtonGroup},
     checkbox::Checkbox,
     color_picker::{ColorPicker, ColorPickerState},
@@ -13,7 +14,7 @@ use gpui_component::{
     h_flex,
     input::{InputState, TextInput},
     switch::Switch,
-    v_flex, ActiveTheme, AxisExt, IndexPath, Selectable, Sizable, Size,
+    v_flex,
 };
 
 pub struct FormStory {
