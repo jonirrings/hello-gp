@@ -1,15 +1,8 @@
 use std::path::PathBuf;
 
 use directories::ProjectDirs;
-use gpui::{
-    Action, App, InteractiveElement as _, ParentElement as _, Render, SharedString, div, px,
-};
-use gpui_component::{
-    ActiveTheme, IconName, Sizable, Theme, ThemeMode, ThemeRegistry,
-    button::{Button, ButtonVariants},
-    popup_menu::PopupMenuExt,
-    scroll::ScrollbarShow,
-};
+use gpui::{Action, App, SharedString};
+use gpui_component::{scroll::ScrollbarShow, ActiveTheme, Theme, ThemeMode, ThemeRegistry};
 use lazy_static::lazy_static;
 use serde::{Deserialize, Serialize};
 
