@@ -213,10 +213,6 @@ fn redact_error(mut error: reqwest::Error) -> reqwest::Error {
 }
 
 impl http_client::HttpClient for ReqwestClient {
-    fn proxy(&self) -> Option<&Url> {
-        self.proxy.as_ref()
-    }
-
     fn type_name(&self) -> &'static str {
         type_name::<Self>()
     }
@@ -273,6 +269,10 @@ impl http_client::HttpClient for ReqwestClient {
             builder.body(body).map_err(|e| anyhow!(e))
         }
         .boxed()
+    }
+
+    fn proxy(&self) -> Option<&Url> {
+        self.proxy.as_ref()
     }
 
     fn send_multipart_form<'a>(
