@@ -3,7 +3,7 @@ use std::sync::OnceLock;
 use rustls::ClientConfig;
 use rustls_platform_verifier::ConfigVerifierExt;
 
-static TLS_CONFIG: OnceLock<rustls::ClientConfig> = OnceLock::new();
+static TLS_CONFIG: OnceLock<ClientConfig> = OnceLock::new();
 
 pub fn tls_config() -> ClientConfig {
     TLS_CONFIG

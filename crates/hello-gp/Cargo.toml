@@ -8,9 +8,8 @@ edition = { workspace = true }
 [dependencies]
 anyhow = { workspace = true }
 gpui = "0.2"
-gpui-component = { path= "/mnt/hitachi/Study/Rust/gpui-component/crates/ui", features = ["webview", "tree-sitter-languages"] }
+gpui-component = { path = "/mnt/hitachi/Study/Rust/gpui-component/crates/ui", features = ["webview", "tree-sitter-languages"] }
 reqwest_client = { workspace = true }
-
 chrono = "0.4"
 fake = { version = "^4.4", features = ["dummy"] }
 rand = "0.8"
@@ -29,9 +28,3 @@ autocorrect = "2"
 
 [target.'cfg(target_os = "linux")'.dependencies]
 gtk = { version = "0.18" }
-
-[profile.release]
-codegen-units = 1 # Allows compiler to perform better optimization.
-lto = true # Enables Link-time Optimization.
-opt-level = "s" # Prioritizes small binary size. Use `3` if you prefer speed.
-strip = true # Ensures debug symbols are removed.

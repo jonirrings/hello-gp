@@ -21,5 +21,11 @@ bytes = "1.0"
 futures = "0.3"
 tokio = { version = "1", features = ["rt", "rt-multi-thread"] }
 regex = "1"
-
 reqwest_client = { path = "crates/reqwest_client" }
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+strip = true
+panic = "abort"
