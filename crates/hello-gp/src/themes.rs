@@ -91,8 +91,10 @@ pub fn init(cx: &mut App) {
         };
         let config_path = config_dir.join(STATE_FILE);
 
-        let json = serde_json::to_string_pretty(&state).unwrap();
-        std::fs::write(config_path, json).unwrap();
+        if let Ok(json) = serde_json::to_string_pretty(&state) {
+            // Ignore write errors - if STATE_FILE doesn't exist or can't be written, do nothing
+            let _ = std::fs::write(config_path, json);
+        }
     })
     .detach();
 

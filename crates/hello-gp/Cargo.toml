@@ -8,7 +8,7 @@ edition = { workspace = true }
 [dependencies]
 anyhow = { workspace = true }
 gpui = "0.2"
-gpui-component = { path = "/mnt/hitachi/Study/Rust/gpui-component/crates/ui", features = ["webview", "tree-sitter-languages"] }
+gpui-component = { version = "0.3", features = ["webview", "tree-sitter-languages"] }
 reqwest_client = { workspace = true }
 chrono = "0.4"
 fake = { version = "^4.4", features = ["dummy"] }
